@@ -1,8 +1,8 @@
 # Smart EMR & Dev Assistant AI Agent
-
+---  
 本題目內容旨在將課堂中學習過或自己有興趣的專業知識，以實際的專案開發來驗證學習成效所創作之作品。
 ---  
-簡介:  
+簡介 :  
 這是一個專為醫療場域與軟體工程團隊打造的「智慧病歷與輔助 AI Agent」後端系統。
 本系統結合了醫療資訊領域知識（EMR）與大語言模型（LLM），目的是希望可以降低醫護人員查詢資料的負擔，並透過 AI 自動化輔助軟體工程師生成測試案例。
 
@@ -12,10 +12,10 @@
 3. 串接 LLM，實現自然語言查詢病歷摘要與自動生成 API 測試案例。
 
 ## 技術堆疊
-* **Backend**: C# ASP.NET Core Web API (.NET 8)
-* **Database**: SQLite, Entity Framework Core
-* **Version Control**: Git, GitHub
-* **AI Integration**: 即將導入 OpenAI API
+* **Backend** : C# ASP.NET Core Web API (.NET 8)
+* **Database** : SQLite, Entity Framework Core
+* **Version Control** : Git, GitHub
+* **AI Integration** : 預計導入 Google Gemini API
 
 ## 開發歷程與階段成果
 

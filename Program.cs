@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SmartEAI.Api.Data;
+using SmartEAI.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 // -------------------------------
+// --- 加上這行：註冊 Gemini AI 服務與 HttpClient ---
+builder.Services.AddHttpClient<IGeminiService, GeminiService>();
 
 // Add services to the container.
 builder.Services.AddControllers();
