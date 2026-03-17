@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using SmartEAI.Api.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// --- 加入這段註冊資料庫的設定 ---
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+// -------------------------------
+
+// Add services to the container.
+builder.Services.AddControllers();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -36,6 +47,7 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+app.MapControllers(); // 加入這行來啟用 API 路由
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
