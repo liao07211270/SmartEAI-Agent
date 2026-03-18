@@ -4,7 +4,7 @@
 
 ---  
 
-### 簡介 :  
+## 簡介 :  
 這是一個專為醫療場域與軟體工程團隊打造的智慧病歷與輔助 AI Agent 後端系統。
 本系統結合了醫療資訊領域知識（EMR）與大語言模型（LLM），目的是希望可以降低醫護人員查詢資料的負擔，並透過 AI 自動化輔助軟體工程師生成測試案例。
 
@@ -13,11 +13,15 @@
 * 導入 Git 版本控制、Entity Framework Core 開發模式，並確保專案結構符合業界標準。
 * 串接 LLM，實現自然語言查詢與病歷摘要，大幅節省人工調閱病歷的時間。
 
+<br>
+
 ## 技術堆疊
 * Backend: C# ASP.NET Core Web API (.NET 8)
 * Database: SQLite, Entity Framework Core
 * Version Control: Git, GitHub
 * AI Integration: Google Gemini 2.5 Flash API (透過 User Secrets 確保金鑰安全)
+
+<br>
 
 ## 開發過程記錄 & 階段成果
 
@@ -40,6 +44,8 @@
 * 使用 **Google Gemini 2.5 Flash API** 處理醫療脈絡以及生成文本。
 * 設計專業醫療助理角色，要求模型根據歷史就診紀錄，輸出包含主要**症狀總結**、**歷次診斷變化趨勢**與**後續照護建議**的結構化繁體中文報告。
 * 採用 .NET 內建的 **User Secrets** 機密管理員，確保 API Key 不會外流至版控系統。
+
+<br>
 
 ---
 
