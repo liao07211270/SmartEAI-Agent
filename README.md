@@ -1,6 +1,6 @@
 # Smart EMR & Dev Assistant AI Agent
 
-本專案為結合醫療領域知識與 AI 技術的實作展演。旨在將所學之專業知識轉化為具備擴充性的 API 系統，完整展示從架構設計、資料庫建置到大語言模型串接的軟體工程歷程。
+本專案為結合醫療領域知識與 AI 技術的實作。旨在將所學之專業知識轉化為具備擴充性的 API 系統，並完整展示從架構設計、資料庫建置到大語言模型串接的軟體工程歷程。
 
 ---  
 
@@ -10,8 +10,8 @@
 
 ## 專案動機與學習目標
 * 實作病患與就診紀錄的關聯式資料庫，提供穩定的 CRUD API 介面。
-* 導入 Git 版本控制、Entity Framework Core 開發模式，並確保專案結構符合業界標準。
-* 串接 LLM，實現自然語言查詢與病歷摘要，大幅節省人工調閱病歷的時間。
+* 導入 Git 版本控制、Entity Framework Core 開發模式，確保專案結構符合業界標準。
+* 串接 LLM，實現自然語言查詢與病歷摘要，節省人工調閱病歷的時間。
 
 <br>
 
@@ -19,7 +19,7 @@
 * Backend: C# ASP.NET Core Web API (.NET 8)
 * Database: SQLite, Entity Framework Core
 * Version Control: Git, GitHub
-* AI Integration: Google Gemini 2.5 Flash API (透過 User Secrets 確保金鑰安全)
+* AI Integration: Google Gemini 2.5 Flash API
 
 <br>
 
@@ -45,9 +45,7 @@
 * 設計專業醫療助理角色，要求模型根據歷史就診紀錄，輸出包含主要**症狀總結**、**歷次診斷變化趨勢**與**後續照護建議**的結構化繁體中文報告。
 * 採用 .NET 內建的 **User Secrets** 機密管理員，確保 API Key 不會外流至版控系統。
 
-<br>
-
 ---
 
 ### [Future Work] 前端開發整合
-* 之後預計開發 Web 前端介面，提供醫護人員視覺化的病患列表與就診歷史，並能直接於介面上觸發 AI 摘要生成功能，完善整體使用者體驗。
+* 之後預計持續開發 Web 前端介面，提供醫護人員視覺化的病患列表與就診歷史，並能直接於介面上觸發 AI 摘要生成功能，完善整體使用者的操作體驗。
