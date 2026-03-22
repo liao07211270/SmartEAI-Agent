@@ -4,17 +4,16 @@ using SmartEAI.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- 加入這段註冊資料庫的設定 ---
+// 加入這段註冊資料庫的設定
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-// -------------------------------
-// --- 加上這行：註冊 Gemini AI 服務與 HttpClient ---
+// 註冊 Gemini AI 服務與 HttpClient
 builder.Services.AddHttpClient<IGeminiService, GeminiService>();
 
-// Add services to the container.
+
 builder.Services.AddControllers();
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -50,7 +49,7 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapControllers(); // 加入這行來啟用 API 路由
+app.MapControllers(); // 啟用 API 路由
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

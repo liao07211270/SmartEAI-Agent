@@ -17,8 +17,11 @@ namespace SmartEAI.Api.Services
 
         public async Task<string> GenerateMedicalSummaryAsync(string prompt)
         {
-            // 使用 Gemini 1.5 Flash 模型 (速度快、適合長文本處理)
-            var url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={_apiKey}";
+            // 1. 清理 API Key：拔除可能不小心存入的雙引號與前後空白 (剛剛就是漏了這行！)
+            var cleanApiKey = _apiKey.Replace("\"", "").Trim();
+
+            // 2. 完整模型名稱 (使用 2026 年最新版的 gemini-2.5-flash)
+            var url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={cleanApiKey}";
 
             // 依照 Google API 規定的 JSON 格式組裝請求內容
             var requestBody = new
@@ -33,7 +36,13 @@ namespace SmartEAI.Api.Services
             
             // 發送 POST 請求給 Google
             var response = await _httpClient.PostAsync(url, content);
-            response.EnsureSuccessStatusCode();
+            
+            // 3. 【除錯神器】如果失敗，把 Google 伺服器給的「真實抱怨內容」抓出來印在畫面上
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorDetail = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Google API 拒絕了請求。狀態碼: {response.StatusCode}, 詳細原因: {errorDetail}");
+            }
 
             // 讀取並解析回傳的 JSON 結果
             var jsonResponse = await response.Content.ReadAsStringAsync();

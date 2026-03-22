@@ -11,7 +11,7 @@ namespace SmartEAI.Api.Controllers
     {
         private readonly AppDbContext _context;
 
-        // 透過依賴注入 (DI) 取得資料庫的連線
+        // 透過依賴注入取得資料庫的連線
         public PatientsController(AppDbContext context)
         {
             _context = context;
