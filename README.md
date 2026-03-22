@@ -25,21 +25,21 @@
 
 ## 開發過程記錄 & 階段成果
 
-### [ 階段一 ] 基礎架構與資料庫設計 (已完成)
+### 階段一 : 基礎架構與資料庫設計 (已完成)
 為了快速建構輕量且可攜的測試原型，本專案選用 **SQLite** 作為資料庫，並以 Entity Framework Core 進行資料庫遷移。
 * 建立 Patient 與 MedicalRecord 的一對多關聯模型。
 * 克服遇到的 dotnet-ef 全域環境變數路徑問題，改採專案區域工具 (Local Tool) 確保依賴性隔離。
 
 <br>
 
-### [ 階段二 ] 核心 RESTful API 開發 (已完成)
+### 階段二 : 核心 RESTful API 開發 (已完成)
 遵循 REST 系統架構風格，實作 PatientsController 與 MedicalRecordsController。
 * 提供新增病歷、查詢特定病患所有就診紀錄等核心端點。
 * 透過 **Swagger UI** 進行本地端點測試，確認 JSON 資料格式回傳正確。
 
 <br>
 
-### [ 階段三 ] AI Agent 核心邏輯與醫療摘要生成 (已完成)
+### 階段三 : AI Agent 核心邏輯與醫療摘要生成 (已完成)
 運用 Dependency Injection 建立專屬的 AI 服務層，維持 Controller 邏輯的整潔與關注點分離。
 * 使用 **Google Gemini 2.5 Flash API** 處理醫療脈絡以及生成文本。
 * 設計專業醫療助理角色，要求模型根據歷史就診紀錄，輸出包含主要**症狀總結**、**歷次診斷變化趨勢**與**後續照護建議**的結構化繁體中文報告。
