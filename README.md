@@ -16,6 +16,9 @@
   
 ## 系統實際運行演示
 下方 GIF 為透過 Swagger 介面調用 API，並藉由 Gemini AI 針對特定病患之歷史病歷自動生成結構化摘要之成果展示:  
+
+<br>
+
 ![SmartEAI 系統演示](./assets/SmartEAI.gif)
 
 <br>
