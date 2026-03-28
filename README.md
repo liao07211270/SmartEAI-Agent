@@ -10,16 +10,25 @@
 
 ## 專案動機與學習目標
 * 實作病患與就診紀錄的關聯式資料庫，提供穩定的 CRUD API 介面。
-* 導入 Git 版本控制、Entity Framework Core 開發模式，確保專案結構符合業界標準。
+* 導入 Git 版本控制、Entity Framework Core 開發模式。
 * 串接 LLM，實現自然語言查詢與病歷摘要，節省人工調閱病歷的時間。
+  
+  
+## 系統實際運行演示
+下方 GIF 為透過 Swagger 介面調用 API，並藉由 Gemini AI 針對特定病患之歷史病歷自動生成結構化摘要之成果展示:  
 
 <br>
 
-## 技術堆疊
+![SmartEAI 系統演示](./assets/SmartEAI.gif)
+
+<br>
+
+## 技術核心
 * Backend: C# ASP.NET Core Web API (.NET 8)
 * Database: SQLite, Entity Framework Core
 * Version Control: Git, GitHub
 * AI Integration: Google Gemini 2.5 Flash API
+* Security: .NET User Secrets
 
 <br>
 
@@ -47,5 +56,5 @@
 
 ---
 
-### [Future Work] 前端開發整合
-* 之後預計持續開發 Web 前端介面，提供醫護人員視覺化的病患列表與就診歷史，並能直接於介面上觸發 AI 摘要生成功能，完善整體使用者的操作體驗。
+### 未來計畫: 前端開發整合
+* 之後預計持續開發 Web 前端介面，提供醫護人員視覺化的病患列表與就診歷史，並能直接於介面上觸發 AI 摘要生成功能，完善使用者的操作體驗。
